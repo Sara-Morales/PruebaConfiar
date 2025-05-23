@@ -1,4 +1,4 @@
-package com.banco.application.dto.client;
+package com.banco.application.dto;
 
 import com.banco.domain.model.Client;
 
