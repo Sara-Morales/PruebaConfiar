@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/bankhistory")
-@Tag(name = "BankHistory", description = "Bank History (Transactions) API")
+@RequestMapping("/api/historialbancario")
+@Tag(name = "HistorialBancario", description = "API para la gestión de movimientos bancarios")
 public class BankHistoryController {
 
     private final BankHistoryService bankHistoryService;
@@ -24,23 +24,23 @@ public class BankHistoryController {
         this.bankHistoryService = bankHistoryService;
     }
 
-    @Operation(summary = "Create a bank history (transaction)")
+    @Operation(summary = "Crear un movimiento bancario (historial)")
     @PostMapping
-    public ResponseEntity<BankHistoryResponse> createBankHistory(@Valid @RequestBody BankHistoryRequest request) {
+    public ResponseEntity<BankHistoryResponse> crearMovimiento(@Valid @RequestBody BankHistoryRequest request) {
         BankHistoryResponse response = bankHistoryService.createBankHistory(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @Operation(summary = "Get all bank histories")
+    @Operation(summary = "Obtener todos los movimientos bancarios")
     @GetMapping
-    public ResponseEntity<List<BankHistoryResponse>> getAllBankHistories() {
+    public ResponseEntity<List<BankHistoryResponse>> obtenerTodosLosMovimientos() {
         List<BankHistoryResponse> responses = bankHistoryService.getAllHistories();
         return ResponseEntity.ok(responses);
     }
 
-    @Operation(summary = "Get bank histories by account id")
-    @GetMapping("/account/{accountId}")
-    public ResponseEntity<List<BankHistoryResponse>> getBankHistoriesByAccount(@PathVariable UUID accountId) {
+    @Operation(summary = "Obtener movimientos por ID de cuenta")
+    @GetMapping("/cuenta/{accountId}")
+    public ResponseEntity<List<BankHistoryResponse>> obtenerMovimientosPorCuenta(@PathVariable UUID accountId) {
         List<BankHistoryResponse> responses = bankHistoryService.getHistoriesByAccount(accountId);
         return ResponseEntity.ok(responses);
     }
