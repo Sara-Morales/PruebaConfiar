@@ -14,8 +14,8 @@ Este proyecto es una API RESTful para la gestión de cuentas bancarias, clientes
 
 1. **Clona el repositorio**:
 
-bash
-git clone https://github.com/tu-usuario/api-bancaria.git
+https://github.com/Sara-Morales/PruebaConfiar
+
 cd api-bancaria
 
 spring.datasource.url=jdbc:mysql://localhost:3306/banco_db?useSSL=false&serverTimezone=UTC
