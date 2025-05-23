@@ -26,11 +26,11 @@ spring.jpa.show-sql=true
 
 Asegúrate de tener la base de datos banco_db creada en MySQL.
 
-Ejecuta el proyecto:
+##Ejecuta el proyecto:
 
 ./mvnw spring-boot:run
 
-Endpoints disponibles
+##Endpoints disponibles
 Una vez iniciado, accede a:
 
 Swagger UI:
@@ -39,7 +39,7 @@ http://localhost:8080/swagger-ui/index.html
 phpMyAdmin (si usas XAMPP/WAMP):
 http://localhost/phpmyadmin/
 
-🧑‍💻 Autor
+##🧑‍💻 Autor
 Desarrollado por Sara Melissa Morales
 📧 Contacto: moralessaramelissa@gmail.com
 Celular: 3127803113
