@@ -30,7 +30,7 @@ Asegúrate de tener la base de datos banco_db creada en MySQL.
 
 ./mvnw spring-boot:run
 
-##Endpoints disponibles
+## Endpoints disponibles
 Una vez iniciado, accede a:
 
 Swagger UI:
