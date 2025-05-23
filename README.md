@@ -16,14 +16,17 @@ Este proyecto es una API RESTful para la gestión de cuentas bancarias, clientes
 
 https://github.com/Sara-Morales/PruebaConfiar
 
-cd api-bancaria
+Antes de ejecutar el proyecto, crea la base de datos y un usuario con los siguientes comandos SQL:
 
-spring.datasource.url=jdbc:mysql://localhost:3306/banco_db?useSSL=false&serverTimezone=UTC
-spring.datasource.username=confiar
-spring.datasource.password=confiarprueba
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+```sql
+CREATE DATABASE banco_db;
 
+CREATE USER 'confiar'@'localhost' IDENTIFIED BY 'confiarprueba';
+GRANT ALL PRIVILEGES ON banco_db.* TO 'confiar'@'localhost';
+FLUSH PRIVILEGES;
+
+User:confiar
+password: confiarprueba
 Asegúrate de tener la base de datos banco_db creada en MySQL.
 
 ## Ejecuta el proyecto:
