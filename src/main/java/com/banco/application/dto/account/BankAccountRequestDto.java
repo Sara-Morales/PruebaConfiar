@@ -5,7 +5,7 @@ import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-public class BankAccountRequest {
+public class BankAccountRequestDto {
 
     @NotNull(message = "El clientId es obligatorio.")
     private UUID clientId;

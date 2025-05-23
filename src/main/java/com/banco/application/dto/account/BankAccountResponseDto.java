@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class BankAccountResponse {
+public class BankAccountResponseDto {
 
     private UUID id;
     private UUID clientId;

@@ -1,7 +1,7 @@
 package com.banco.application.service;
 
-import com.banco.application.dto.account.BankAccountRequest;
-import com.banco.application.dto.account.BankAccountResponse;
+import com.banco.application.dto.account.BankAccountRequestDto;
+import com.banco.application.dto.account.BankAccountResponseDto;
 import com.banco.domain.model.BankAccount;
 import com.banco.domain.repository.BankAccountRepository;
 import com.banco.domain.repository.ClientRepository;
@@ -24,7 +24,7 @@ public class BankAccountService {
         this.clientRepository = clientRepository;
     }
 
-    public BankAccountResponse create(BankAccountRequest request) {
+    public BankAccountResponseDto create(BankAccountRequestDto request) {
         // Validar existencia del cliente activo
         var client = clientRepository.findById(request.getClientId())
                 .orElseThrow(() -> new BusinessException("El cliente no existe."));
@@ -49,21 +49,21 @@ public class BankAccountService {
         return toResponse(saved);
     }
 
-    public BankAccountResponse getById(UUID id) {
+    public BankAccountResponseDto getById(UUID id) {
         return bankAccountRepository.findById(id)
                 .map(this::toResponse)
                 .orElseThrow(() -> new BusinessException("Cuenta bancaria no encontrada."));
     }
 
-    public List<BankAccountResponse> getAll() {
+    public List<BankAccountResponseDto> getAll() {
         return bankAccountRepository.findAll()
                 .stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
     }
 
-    private BankAccountResponse toResponse(BankAccount account) {
-        BankAccountResponse response = new BankAccountResponse();
+    private BankAccountResponseDto toResponse(BankAccount account) {
+        BankAccountResponseDto response = new BankAccountResponseDto();
         response.setId(account.getId());
         response.setClientId(account.getClientId());
         response.setAccountNumber(account.getAccountNumber());
