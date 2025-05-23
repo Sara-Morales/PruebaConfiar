@@ -1,7 +1,7 @@
 package com.banco.application.service;
 
 
-import com.banco.application.dto.ClientRequestDto;
+import com.banco.application.dto.client.ClientRequestDto;
 import com.banco.domain.model.Client;
 import com.banco.domain.repository.ClientRepository;
 import com.banco.shared.exception.BusinessException;

@@ -1,7 +1,7 @@
 package com.banco.presentation.controller;
 
 
-import com.banco.application.dto.ClientRequestDto;
+import com.banco.application.dto.client.ClientRequestDto;
 import com.banco.application.service.ClientService;
 import com.banco.domain.model.Client;
 import jakarta.validation.Valid;

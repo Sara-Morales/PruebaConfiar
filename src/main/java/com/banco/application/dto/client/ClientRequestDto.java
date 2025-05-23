@@ -1,4 +1,4 @@
-package com.banco.application.dto;
+package com.banco.application.dto.client;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
